@@ -7,7 +7,8 @@ export function getToken() {
 }
 
 export function setToken(token) {
-  return Cookies.set(TokenKey, token)
+  const bearerToken = `Bearer ${token}`
+  return Cookies.set(TokenKey, bearerToken)
 }
 
 export function removeToken() {
