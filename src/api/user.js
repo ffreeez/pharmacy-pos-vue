@@ -15,32 +15,40 @@ export function getInfo() {
   })
 }
 
-export function logout() {
+export function getAllUsers() {
   return request({
-    url: '/users/logout',
-    method: 'post'
-  })
-}
-
-export function getUser() {
-  return request({
-    url: '/users/get',
+    url: '/users/getall',
     method: 'get'
   })
 }
 
-export function updateUser(data) {
+export function getUser(id) {
   return request({
-    url: '/users/update',
+    url: `/users/get${id}`,
+    method: 'get'
+  })
+}
+
+export function updateIsAdmin(id, data) {
+  return request({
+    url: `/users/update/isadmin/${id}`,
     method: 'put',
     data
   })
 }
 
-export function deleteUser() {
+export function resetpassword(id, data) {
   return request({
-    url: '/users/delete',
-    method: 'del'
+    url: `/users/update/password/${id}`,
+    method: 'put',
+    data
+  })
+}
+
+export function deleteUser(id) {
+  return request({
+    url: `/users/delete/${id}`,
+    method: 'delete'
   })
 }
 
