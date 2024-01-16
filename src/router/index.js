@@ -56,23 +56,79 @@ export const constantRoutes = [
   },
 
   {
-    path: '/example',
+    path: '/manage',
     component: Layout,
-    redirect: '/example/table',
-    name: 'Example',
-    meta: { title: 'Example', icon: 'el-icon-s-help' },
+    name: '系统管理',
+    meta: { title: '系统管理', icon: 'el-icon-s-help' },
     children: [
       {
-        path: 'table',
-        name: 'Table',
+        path: 'user',
+        name: '用户管理',
         component: () => import('@/views/table/index'),
-        meta: { title: 'Table', icon: 'table' }
+        meta: { title: '用户管理', icon: 'peoples' }
       },
       {
-        path: 'tree',
-        name: 'Tree',
-        component: () => import('@/views/tree/index'),
-        meta: { title: 'Tree', icon: 'tree' }
+        path: 'log',
+        name: '系统日志',
+        component: () => import('@/views/table/index'),
+        meta: { title: '系统日志', icon: 'table' }
+      },
+      {
+        path: 'profit',
+        name: '利润统计',
+        component: () => import('@/views/table/index'),
+        meta: { title: '利润统计', icon: 'chart' }
+      },
+      {
+        path: 'sale',
+        name: '销量统计',
+        component: () => import('@/views/table/index'),
+        meta: { title: '销量统计', icon: 'chart' }
+      },
+      {
+        path: 'assistant',
+        name: '店员统计',
+        component: () => import('@/views/table/index'),
+        meta: { title: '店员统计', icon: 'people' }
+      }
+    ]
+  },
+
+  {
+    path: '/form',
+    component: Layout,
+    children: [
+      {
+        path: 'index',
+        name: '收银',
+        component: () => import('@/views/form/index'),
+        meta: { title: '收银', icon: 'form' }
+      }
+    ]
+  },
+
+  {
+    path: '/form',
+    component: Layout,
+    children: [
+      {
+        path: 'index',
+        name: '会员管理',
+        component: () => import('@/views/form/index'),
+        meta: { title: '会员管理', icon: 'form' }
+      }
+    ]
+  },
+
+  {
+    path: '/form',
+    component: Layout,
+    children: [
+      {
+        path: 'index',
+        name: '优惠券管理',
+        component: () => import('@/views/form/index'),
+        meta: { title: '优惠券管理', icon: 'form' }
       }
     ]
   },
