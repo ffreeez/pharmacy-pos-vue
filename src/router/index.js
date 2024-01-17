@@ -69,14 +69,27 @@ export const constantRoutes = [
   },
 
   {
+    path: '/form',
+    component: Layout,
+    children: [
+      {
+        path: 'index',
+        name: '订单',
+        component: () => import('@/views/form/index'),
+        meta: { title: '订单', icon: 'money' }
+      }
+    ]
+  },
+
+  {
     path: '/table',
     component: Layout,
     children: [
       {
         path: 'index',
-        name: '会员管理',
+        name: '会员',
         component: () => import('@/views/table/index'),
-        meta: { title: '会员管理', icon: 'peoples' }
+        meta: { title: '会员', icon: 'peoples' }
       }
     ]
   },
@@ -87,30 +100,30 @@ export const constantRoutes = [
     children: [
       {
         path: 'index',
-        name: '优惠券管理',
+        name: '优惠券',
         component: () => import('@/views/form/index'),
-        meta: { title: '优惠券管理', icon: 'chart' }
+        meta: { title: '优惠券', icon: 'chart' }
       }
     ]
   },
 
   {
-    path: '/drug',
+    path: '/drugs',
     component: Layout,
-    name: '药品管理',
-    meta: { title: '药品管理', icon: 'table' },
+    name: '药品',
+    meta: { title: '药品', icon: 'table' },
     children: [
       {
-        path: 'getstock',
-        name: '库存查询',
-        component: () => import('@/views/table/index'),
-        meta: { title: '库存查询', icon: 'list' }
+        path: 'price',
+        name: '药品管理',
+        component: () => import('@/views/drugs/drugs.vue'),
+        meta: { title: '药品管理', icon: 'chart' }
       },
       {
-        path: 'addstock',
-        name: '库存变动',
-        component: () => import('@/views/table/index'),
-        meta: { title: '库存变动', icon: 'chart' }
+        path: 'category',
+        name: '分类管理',
+        component: () => import('@/views/drugs/categories.vue'),
+        meta: { title: '分类管理', icon: 'list' }
       }
     ]
   },
@@ -132,24 +145,6 @@ export const constantRoutes = [
         name: '系统日志',
         component: () => import('@/views/table/index'),
         meta: { title: '系统日志', icon: 'table' }
-      },
-      {
-        path: 'profit',
-        name: '利润统计',
-        component: () => import('@/views/table/index'),
-        meta: { title: '利润统计', icon: 'chart' }
-      },
-      {
-        path: 'sale',
-        name: '销量统计',
-        component: () => import('@/views/table/index'),
-        meta: { title: '销量统计', icon: 'component' }
-      },
-      {
-        path: 'assistant',
-        name: '店员统计',
-        component: () => import('@/views/table/index'),
-        meta: { title: '店员统计', icon: 'people' }
       }
     ]
   },

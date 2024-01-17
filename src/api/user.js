@@ -24,7 +24,7 @@ export function getAllUsers() {
 
 export function getUser(id) {
   return request({
-    url: `/users/get${id}`,
+    url: `/users/get/${id}`,
     method: 'get'
   })
 }
@@ -37,7 +37,7 @@ export function updateIsAdmin(id, data) {
   })
 }
 
-export function resetpassword(id, data) {
+export function resetPassword(id, data) {
   return request({
     url: `/users/update/password/${id}`,
     method: 'put',
@@ -56,6 +56,14 @@ export function createUser(data) {
   return request({
     url: '/users/create',
     method: 'post',
+    data
+  })
+}
+
+export function getUserByUsername(data) {
+  return request({
+    url: `/users/getbyusername/${data}`,
+    method: 'get',
     data
   })
 }
